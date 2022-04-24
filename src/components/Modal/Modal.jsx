@@ -12,33 +12,15 @@ export default function Modal({ onClose, children }) {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
         onClose();
-        // console.log('почистили едвенлістенер');
       }
     };
-    // console.log('Modal componentDidMount');
     window.addEventListener('keydown', handleKeyDown);
-    // console.log('Modal componentWillUnmount');
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [onClose]);
 
-  //  componentDidMount() {
-  //   console.log('Modal componentDidMount');
-  //   window.addEventListener('keydown', handleKeyDown);
-  // }
-  //   componentWillUnmount() {
-  //   console.log('Modal componentWillUnmount');
-  //   window.removeEventListener('keydown', handleKeyDown);
-  //   // console.log('почистили едвенлістенер');
-  // }
-  // const handleKeyDown = e => {
-  //   if (e.code === 'Escape') {
-  //     props.onClose();
-  //   }
-  // };
   const handleBackdropClick = e => {
-    // console.log('клікнули в бекдроп');
     // якщо клікнути в біле поле (текст параграф, то подія спливе до бекдропа і там ми її відловимо
     // нам треба відрізняти - де ми клікнули саме в бекдроп, а де у вкладені елементи під бекдропом
     // для цього є карент таргет -(на чому зловили подію) і таргет- (на що ми клацнули))

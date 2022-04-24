@@ -31,7 +31,7 @@ export default function SearchBar(props) {
     }
     props.inSubmit(searchImage);
     // очищаем стейт зразу після сабміта форми
-    // setSearchImage(searchImage: '');
+    // setSearchImage('');
   };
 
   return (
